@@ -1,16 +1,23 @@
 {
-  "name": "jsonserver2",
+  "name": "mock-server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Krushana-chavan/mock-server.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Krushana-chavan/mock-server/issues"
+  },
+  "homepage": "https://github.com/Krushana-chavan/mock-server#readme",
   "dependencies": {
-    "dotenv": "^16.0.3",
-    "json-server": "^0.17.3"
+    "json-server": "^0.17.1"
   }
 }
