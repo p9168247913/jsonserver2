@@ -1,5 +1,4 @@
-{
-  "products": [
+ [
     {
       "id": 1,
       "title": "iPhone 9",
@@ -549,4 +548,3 @@
       "thumbnail": "https://m.media-amazon.com/images/I/41QR-3ZvqHL._AC_UY218_.jpg"
     }
   ]
-}

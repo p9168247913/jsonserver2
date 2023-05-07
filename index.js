@@ -1,13 +1,27 @@
-const data = require('./db.json');
+const express = require("express")
+const cors = require("cors")
+const connection = require("./config/db")
+require("dotenv").config();
 
-const jsonServer = require('json-server');
-const server = jsonServer.create();
-const router = jsonServer.router(data);
-const middlewares = jsonServer.defaults();
-const port = process.env.PORT || 3000;
+const productRouter = require("./router/productRoutes")
 
-server.use(middlewares);
-server.use(router);
+const app = express()
+app.use(cors({origin:"*"}));
+app.use(express.json())
+
+app.use(express.urlencoded({ extended: true }))
+
+app.use("/products", productRouter)
 
 
-server.listen(port, () => console.log(`JSON Server is running on port ${port}`));
+
+app.listen(process.env.port, async()=>{
+    try{
+        await connection;
+        console.log("Connected to Mongo Atlas")
+    }catch(e){
+        console.log(e);
+        console.log("Could not connect to DB")
+    }
+    console.log(`Server started on port ${process.env.port}`);
+})
